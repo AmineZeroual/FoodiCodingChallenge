@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721040025992",
+    "project_id": "foodi-dc4c1",
+    "storage_bucket": "foodi-dc4c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721040025992:android:c72b8f628c084fd023f23d",
+        "android_client_info": {
+          "package_name": "com.foddi.foodi_coding_challenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721040025992-msrcae9b9t68iamku41qjh0bndjmmuk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFpB-Ney0yb7TwwVSIypuG_bSntDCtYMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721040025992-msrcae9b9t68iamku41qjh0bndjmmuk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
