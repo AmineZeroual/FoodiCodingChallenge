@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/constant.dart';
-import '../../../../core/widgets/custom_divider.dart';
+import '../../model/constant.dart';
+import 'custom_divider.dart';
 
 
 class FilterItem extends StatefulWidget {

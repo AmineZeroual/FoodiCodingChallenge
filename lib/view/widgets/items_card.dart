@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../../model/constant.dart';
+import '../../../../model/Item_model.dart';
+import '../../controller/Cart Controller/cart_controller.dart';
+import '../pages/ItemDetails/details_page.dart';
+import 'NeumorphicCustomButton.dart';
 
-import '../../../../core/constant.dart';
-import '../../../../core/widgets/NeumorphicCustomButton.dart';
-import '../../data/Item_model.dart';
-
-class ItemCard extends StatelessWidget {
-  const ItemCard({
+class ItemCard extends StatefulWidget {
+   ItemCard({
     Key? key,
     required this.size, required this.item,
   }) : super(key: key);
@@ -15,15 +18,28 @@ class ItemCard extends StatelessWidget {
   final Item item;
 
   @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
+  CartController? controller ;
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  controller = Get.find<CartController>();
+  }
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         //TODO implement Navigation to Details screen
+        Get.to(()=> DetailsPage(item: widget.item,));
       },
       child: Container(
         color: kBackGroundColor,
-        height: size.height * 0.33,
-        width: size.width*0.55,
+        height: widget.size.height * 0.33,
+        width: widget.size.width*0.55,
         child: Center(
           child: Stack(
             fit: StackFit.passthrough,
@@ -34,8 +50,8 @@ class ItemCard extends StatelessWidget {
                   style: neumorphicUpContainerStyle,
                   child: Container(
                     color: kElementsColor,
-                    height: size.height * 0.32,
-                    width: size.width * 0.48,
+                    height: widget.size.height * 0.32,
+                    width: widget.size.width * 0.48,
                   ),
                 ),
               ),
@@ -43,9 +59,9 @@ class ItemCard extends StatelessWidget {
                 top: -9,
                 right: -8,
                 child: Image.asset(
-                  item.image!,
-                  height: size.height * 0.23,
-                  width: size.width * 0.55,
+                  widget.item.image!,
+                  height: widget.size.height * 0.23,
+                  width: widget.size.width * 0.55,
                 ),
               ),
               Positioned(
@@ -58,12 +74,12 @@ class ItemCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        item.type!,
+                        widget.item.type!,
                         style: kSubTitleStyle,
                       ),
 
                       Text(
-                        item.name!,
+                        widget.item.name!,
                         style: kTitleStyle.copyWith(
                             fontSize: 22,
                             fontWeight: FontWeight.w600),
@@ -72,21 +88,29 @@ class ItemCard extends StatelessWidget {
                         height: 5,
                       ),
                       SizedBox(
-                        width: size.width*0.42,
+                        width: widget.size.width*0.42,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "£${item.unitPrice!}",
+                              "£${widget.item.unitPrice!}",
                               style: kTitleStyle.copyWith(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600),
                             ),
                             NeumorphicCustomButton(
                               function: () {
+                                if(widget.item.isInCart.value){
+                                  controller!.addToCart(widget.item);
+                                }else{
+                                  controller!.removeFromCart(widget.item);
+
+                                }
+
                                 //TODO implement "Add to Cart Features"
                               },
+                              isOnCart: widget.item.isInCart,
                               isClickable: true,
                               icon: Icons.add_shopping_cart,
                             ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../../../../core/constant.dart';
-import '../../../../core/widgets/NeumorphicCustomButton.dart';
+import '../../model/constant.dart';
+import 'NeumorphicCustomButton.dart';
 
 class SearchTextField extends StatelessWidget {
   const SearchTextField({Key? key}) : super(key: key);

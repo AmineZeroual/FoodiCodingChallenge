@@ -1,8 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant.dart';
-import '../../data/home_page_constant.dart';
+import '../../model/constant.dart';
+import '../../model/home_page_constant.dart';
 
 
 class CustomBottomNavBarBar extends StatelessWidget {

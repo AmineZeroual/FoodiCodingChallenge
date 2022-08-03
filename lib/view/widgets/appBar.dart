@@ -1,6 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:foodi_coding_challenge/core/constant.dart';
+import 'package:foodi_coding_challenge/model/constant.dart';
 
 import 'NeumorphicCustomButton.dart';
 

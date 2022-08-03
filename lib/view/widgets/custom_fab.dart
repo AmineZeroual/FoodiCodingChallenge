@@ -2,7 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../../../../core/constant.dart';
+import '../../model/constant.dart';
 
 class CustomFAB extends StatelessWidget {
   const CustomFAB({Key? key, required this.function}) : super(key: key);

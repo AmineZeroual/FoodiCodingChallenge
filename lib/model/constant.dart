@@ -37,5 +37,15 @@ NeumorphicStyle neumorphicUpContainerStyle =  NeumorphicStyle(
   shape: NeumorphicShape.flat,
   lightSource: LightSource.topLeft,
   boxShape:  NeumorphicBoxShape.roundRect(
-      const   BorderRadius.all(   Radius.circular(12))),
+      const   BorderRadius.all(Radius.circular(12),),),
+);
+
+NeumorphicStyle? neumorphicButtonStyle =   NeumorphicStyle(
+  color: kPrimaryColor,
+  shape: NeumorphicShape.concave,
+  boxShape: NeumorphicBoxShape.circle(),
+  depth: 3,
+  intensity: 0.9,
+  shadowLightColor: Colors.white,
+  shadowDarkColor: Colors.blueGrey,
 );
