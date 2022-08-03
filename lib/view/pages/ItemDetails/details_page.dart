@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodi_coding_challenge/controller/Cart%20Controller/cart_controller.dart';
 import 'package:foodi_coding_challenge/model/constant.dart';
 import 'package:foodi_coding_challenge/view/widgets/custom_button.dart';
 import 'package:get/get.dart';
@@ -6,10 +7,13 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../model/Item_model.dart';
 import '../../widgets/NeumorphicCustomButton.dart';
 import '../../widgets/add_minus_widget.dart';
+import '../Cart/cart_ordering_page.dart';
 
 class DetailsPage extends StatelessWidget {
   DetailsPage({Key? key, required this.item}) : super(key: key);
   final Item item;
+
+  CartController controller = Get.find<CartController>();
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +39,12 @@ class DetailsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
                AddMinusWidget(item: item,),
-
-              CustomButton(size: size, function: (){},text: "View cart"),
+              CustomButton(size: size, function: (){
+                controller.addToCart(item);
+                controller.clearData();
+                controller.calculateTotalCartPrices();
+                Get.to(()=> CartOrderingPage());
+              },text: "View cart"),
             ],
           ),
         ),
@@ -104,7 +112,7 @@ class DetailsPage extends StatelessWidget {
                       style: kTitleStyle,
                     ),
                     Text(
-                      "£${item.unitPrice!}",
+                      "£${item.unitPrice}",
                       style: kTitleStyle.copyWith(
                         fontWeight: FontWeight.w400,
                       ),

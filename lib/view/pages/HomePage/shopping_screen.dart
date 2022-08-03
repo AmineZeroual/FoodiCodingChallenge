@@ -42,6 +42,8 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                     title: "Foodi",
                     endWidget: NeumorphicCustomButton(
                       function: () {
+                        controller.clearData();
+                        controller.calculateTotalCartPrices();
                         Get.to(()=> CartOrderingPage());
                       },
                       child: Badge(

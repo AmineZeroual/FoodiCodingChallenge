@@ -30,7 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: FloatingActionButton(
               backgroundColor: kPrimaryColor,
               onPressed: () {
+                controller.clearData();
+                controller.calculateTotalCartPrices();
                 Get.to(() => CartOrderingPage());
+
               },
               child: Badge(
                 alignment: Alignment.bottomRight,

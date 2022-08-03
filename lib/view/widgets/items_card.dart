@@ -94,7 +94,7 @@ class _ItemCardState extends State<ItemCard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "£${widget.item.unitPrice!}",
+                              "£${widget.item.unitPrice}",
                               style: kTitleStyle.copyWith(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600),

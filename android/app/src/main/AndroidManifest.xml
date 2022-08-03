@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.foddi.foodi_coding_challenge">
    <application
-        android:label="foodi_coding_challenge"
+        android:label="Foodi"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

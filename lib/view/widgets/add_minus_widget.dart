@@ -13,7 +13,7 @@ class AddMinusWidget extends StatelessWidget {
     Key? key, this.item,
   }) : super(key: key);
  final Item? item;
- CartController cartController = Get.find<CartController>();
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder(builder: (ItemController controller) {
@@ -22,7 +22,7 @@ class AddMinusWidget extends StatelessWidget {
           NeumorphicCustomButton(
             function: () {
             controller.minusQuantity(item!);
-            cartController.milkOffer();
+
             },
             isClickable: false,
             child: Icon(Icons.remove),
@@ -42,7 +42,6 @@ class AddMinusWidget extends StatelessWidget {
           NeumorphicCustomButton(
             function: () {
               controller.addQuantity(item!);
-              cartController.milkOffer();
               },
             isClickable: false,
             child: Icon(Icons.add),

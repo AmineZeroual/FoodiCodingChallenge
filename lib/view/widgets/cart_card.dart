@@ -59,20 +59,20 @@ class CartCard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "£1.60",
+                    Visibility(
+                      visible: item.isDiscounted,
+                      child:Text(
+                      item.discount!.toString(),
                       style: kSubTitleStyle.copyWith(
                         color: kDiscountColor,
                         decoration: TextDecoration.lineThrough,
                       ),
                     ),
-                    const SizedBox(
-                      height: 15,
                     ),
                     Text(
-                      "£${item.unitPrice.toString()}",
+                      "£${item.totalPrice.toString()}",
                       style: kSubTitleStyle.copyWith(
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],
