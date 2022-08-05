@@ -33,15 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// ThemeData(
-//         splashColor: kPrimaryColor,
-//         fontFamily:'Roboto',
-//         appBarTheme: ThemeData.light().appBarTheme.copyWith(
-//           backgroundColor: kBackGroundColor,
-//           elevation: 0,
-//           centerTitle: true,
-//         ),
-//         scaffoldBackgroundColor: kBackGroundColor,
-//         colorScheme:
-//         const ColorScheme.light().copyWith(primary: kPrimaryColor),
-//       ),

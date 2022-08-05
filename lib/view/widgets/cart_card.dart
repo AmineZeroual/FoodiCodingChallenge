@@ -49,6 +49,7 @@ class CartCard extends StatelessWidget {
                     height: 12,
                   ),
                   GetBuilder(builder: (ItemController controller) {
+                    //This widget for increment and decrement the quantity of item
                     return  AddMinusWidget(item:item);
                   },),
                 ],

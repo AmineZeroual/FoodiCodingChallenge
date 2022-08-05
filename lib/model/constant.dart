@@ -45,7 +45,7 @@ NeumorphicStyle neumorphicUpContainerStyle =  NeumorphicStyle(
       const   BorderRadius.all(Radius.circular(12),),),
 );
 
-NeumorphicStyle? neumorphicButtonStyle =   NeumorphicStyle(
+NeumorphicStyle? neumorphicButtonStyle =   const NeumorphicStyle(
   color: kPrimaryColor,
   shape: NeumorphicShape.concave,
   boxShape: NeumorphicBoxShape.circle(),
@@ -54,6 +54,7 @@ NeumorphicStyle? neumorphicButtonStyle =   NeumorphicStyle(
   shadowLightColor: Colors.white,
   shadowDarkColor: Colors.blueGrey,
 );
+
 
 double dp(double val, int places){
   num mod = pow(10.0, places);

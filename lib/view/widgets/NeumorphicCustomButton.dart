@@ -25,6 +25,8 @@ class _NeumorphicCustomButtonState extends State<NeumorphicCustomButton> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicButton(
+      //to make a reusable component we use the "isClickable" variable to
+      // determinate if the button have inner shadow or not
       onPressed:widget.isClickable?(){
         setState(() {
         changeShape = !changeShape;

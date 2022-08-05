@@ -17,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool changeShape = false;
   int _bottomNavIndex = 1;
 
   @override
@@ -30,10 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: FloatingActionButton(
               backgroundColor: kPrimaryColor,
               onPressed: () {
+                //The Fab Button we call it after clearing (old data) and recalculating total item prices in the cart
                 controller.clearData();
                 controller.calculateTotalCartPrices();
                 Get.to(() => CartOrderingPage());
-
               },
               child: Badge(
                 alignment: Alignment.bottomRight,
@@ -58,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             index: _bottomNavIndex,
             tapIndex: (index) => setState(() => _bottomNavIndex = index),
           ),
-          //we didn't use the app bar because with it we can't change the size of the button
+          //we didn't use the app bar because with it we can't change the size of the button so we create a custom one
           backgroundColor: kBackGroundColor,
           body: SafeArea(
             child: bottomNavBarScreens[_bottomNavIndex],

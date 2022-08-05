@@ -22,10 +22,9 @@ class AddMinusWidget extends StatelessWidget {
           NeumorphicCustomButton(
             function: () {
             controller.minusQuantity(item!);
-
             },
             isClickable: false,
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
           const SizedBox(
             width: 12,
@@ -44,7 +43,7 @@ class AddMinusWidget extends StatelessWidget {
               controller.addQuantity(item!);
               },
             isClickable: false,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
 
         ],
